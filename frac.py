@@ -2,7 +2,7 @@ class Fraction:
     '''
     A class to handle operations on rational numbers.
 
-    Note: This class does no sanity or type checking.
+    NOTE: This class does no sanity or type checking.
     You CAN divide by zero, if that's what you're into.
     '''
 
