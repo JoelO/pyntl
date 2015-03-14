@@ -28,7 +28,7 @@ class Fraction:
         return float(self.numerator) / self.denominator
 
     def __bool__(self):
-        return self.numerator
+        return self.numerator != 0
 
     def __nonzero__(self):
         # Needed for Python 2
