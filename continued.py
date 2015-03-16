@@ -1,5 +1,4 @@
 from frac import Fraction
-from math import floor
 
 def toFrac(terms):
     '''

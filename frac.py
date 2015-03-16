@@ -1,3 +1,6 @@
+from functools import total_ordering
+
+@total_ordering
 class Fraction:
     '''
     A class to handle operations on rational numbers.
@@ -22,6 +25,7 @@ class Fraction:
         return str(self.numerator) + " / " + str(self.denominator)
 
     def __int__(self):
+        # NOTE: This returns the floor, which is inconsistent with floats.
         return self.numerator // self.denominator
 
     def __float__(self):
@@ -97,18 +101,6 @@ class Fraction:
     def __lt__(self, other):
         return  self.numerator * other.denominator < \
                 self.denominator * other.numerator
-
-    def __gt__(self, other):
-        return other < self
-
-    def __ne__(self, other):
-        return not (self == other)
-
-    def __ge__(self, other):
-        return not (self < other)
-
-    def __le__(self, other):
-        return not (self > other)
 
 # TODO: Factor this out.
 def _gcd(a, b):
