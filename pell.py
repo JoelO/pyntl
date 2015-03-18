@@ -1,14 +1,6 @@
-from math import sqrt
+from common import gcd
 from continued import toFrac
-
-# TODO: Factor this out.
-def gcd(a, b):
-    '''
-    Find the greatest common divisor using the Euclidean Algorithm.
-    '''
-    while a != 0:
-        (a, b) = (b % a, a)
-    return b
+from math import sqrt
 
 def pell(n):
     '''

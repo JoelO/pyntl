@@ -1,3 +1,4 @@
+from common import gcd
 from functools import total_ordering
 
 @total_ordering
@@ -84,7 +85,7 @@ class Fraction:
         return Fraction(self.denominator, self.numerator)
 
     def reduce(self):
-        g = _gcd(self.numerator, self.denominator)
+        g = gcd(self.numerator, self.denominator)
         if g != 0:
             self.numerator /= g
             self.denominator /= g
@@ -101,10 +102,4 @@ class Fraction:
     def __lt__(self, other):
         return  self.numerator * other.denominator < \
                 self.denominator * other.numerator
-
-# TODO: Factor this out.
-def _gcd(a, b):
-    while a != 0:
-        (a, b) = (b % a, a)
-    return b
 
