@@ -12,7 +12,7 @@ def gcd(a, b):
 
 def pell(n):
     '''
-    Generate solutions to x^2 + n y^2 = 1 for non-square n.
+    Generate solutions (x, y) to x^2 - n y^2 = 1 for non-square n.
     '''
 
     # We find the principal solution using continued fractions.
@@ -51,11 +51,4 @@ def pell(n):
     while True:
         yield (x, y)
         x, y = x_princ * x + n * y_princ * y, x_princ * y + y_princ * x
-
-count = 10
-for t in pell(3):
-    count -= 1
-    if count <= 0:
-        break
-    print t
 
